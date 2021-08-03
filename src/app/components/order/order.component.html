@@ -22,7 +22,9 @@
                 <td>{{orderinfo.totalPrice|currency}}</td>
                 <td>{{orderinfo.paymentMethod}}</td>
                 <td>{{orderinfo.stateOfOrder}}</td>
-                <td></td>
+                <td class="d-flex justify-content-center">
+                  <img *ngFor="let googId of orderinfo.goodsUrlImg" [src]="googId" alt="" width="40px" height="40px" class="mr-2 rounded-circle">
+                </td>
               </tr>
             </tbody>
           </table>

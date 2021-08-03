@@ -20,10 +20,16 @@ export class OrderComponent implements OnInit {
     this.getOrder();
   }
 
-  getOrder(){
-    this.auth.isConnected()
-             .pipe(map(data => data.uid),switchMap((id)=> this.order.getOrder(id)))
-             .subscribe((dataOrder)=>this.orderListe = dataOrder);
+  getOrder() {
+    this.auth
+      .isConnected()
+      .pipe(
+        map((data) => data.uid),
+        switchMap((id) => this.order.getOrder(id))
+      )
+      .subscribe((dataOrder) => {
+        this.orderListe = dataOrder;
+      });
   }
 
 }

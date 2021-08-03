@@ -60,12 +60,12 @@ export class CheckoutComponent implements OnInit {
   }
 
   orderNow(){
-  let order : Order = {
-    goodsId: this.cartData.map((data)=> data.id),
-    dataOrder : formatDate(new Date(), 'dd/MM/yyyy', 'en-US'),
-    stateOfOrder : "New",
-    totalPrice : this.subTotal,
-    paymentMethod : this.order[1]
+    let order : Order = {
+      goodsUrlImg: this.cartData.map((data)=> data.imgUrl),
+      dataOrder : formatDate(new Date(), 'dd/MM/yyyy', 'en-US'),
+      stateOfOrder : "New",
+      totalPrice : this.subTotal,
+      paymentMethod : this.order[1]
   };
 
   let userInfo : UserInfo = {
